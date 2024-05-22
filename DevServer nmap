@@ -1,0 +1,54 @@
+Nmap scan report for 172.16.5.10
+Host is up (0.0053s latency).
+Not shown: 991 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+21/tcp   open  ftp      FileZilla ftpd 0.9.41 beta
+| ftp-syst: 
+|_  SYST: UNIX emulated by FileZilla
+25/tcp   open  smtp
+| fingerprint-strings: 
+|   GetRequest: 
+|     220 localhost ESMTP server ready.
+|     Syntax error in parameters or arguments.
+|     Syntax error in parameters or arguments.
+|   Hello, NULL: 
+|_    220 localhost ESMTP server ready.
+| smtp-commands: localhost Hello nmap.scanme.org; ESMTPs are:, TIME, SIZE 0, HELP
+|_ Recognized SMTP commands are: HELO EHLO MAIL RCPT DATA RSET AUTH NOOP QUIT HELP VRFY SOML
+79/tcp   open  finger   Mercury/32 fingerd
+| finger: Login: Admin         Name: Mail System Administrator\x0D
+| \x0D
+|_[No profile information]\x0D
+80/tcp   open  http     Apache httpd 2.4.58 ((Win64) OpenSSL/3.1.3 PHP/8.0.30)
+|_http-favicon: Unknown favicon MD5: 6EB4A43CB64C97F76562AF703893C8FD
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Welcome
+106/tcp  open  pop3pw   Mercury/32 poppass service
+110/tcp  open  pop3     Mercury/32 pop3d
+|_pop3-capabilities: TOP APOP USER UIDL EXPIRE(NEVER)
+143/tcp  open  imap     Mercury/32 imapd 4.62
+|_imap-capabilities: AUTH=PLAIN OK CAPABILITY complete X-MERCURY-1A0001 IMAP4rev1
+443/tcp  open  ssl/http Apache httpd 2.4.58 ((Win64) OpenSSL/3.1.3 PHP/8.0.30)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| ssl-cert: Subject: commonName=localhost
+| Issuer: commonName=localhost
+| Public Key type: rsa
+| Public Key bits: 1024
+| Signature Algorithm: sha1WithRSAEncryption
+| Not valid before: 2009-11-10T23:48:47
+| Not valid after:  2019-11-08T23:48:47
+| MD5:   a0a4:4cc9:9e84:b26f:9e63:9f9e:d229:dee0
+|_SHA-1: b023:8c54:7a90:5bfa:119c:4e8b:acca:eacf:3649:1ff6
+|_http-title: Welcome
+|_http-favicon: Unknown favicon MD5: 6EB4A43CB64C97F76562AF703893C8FD
+3306/tcp open  mysql    MariaDB (unauthorized)
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port25-TCP:V=7.94SVN%I=7%D=5/9%Time=663D5CD8%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,23,"220\x20localhost\x20ESMTP\x20server\x20ready\.\r\n")%r(Hello,23,
+SF:"220\x20localhost\x20ESMTP\x20server\x20ready\.\r\n")%r(GetRequest,7F,"
+SF:220\x20localhost\x20ESMTP\x20server\x20ready\.\r\n501\x20Syntax\x20erro
+SF:r\x20in\x20parameters\x20or\x20arguments\.\r\n501\x20Syntax\x20error\x2
+SF:0in\x20parameters\x20or\x20arguments\.\r\n");
+Service Info: Host: localhost; OS: Windows; CPE: cpe:/o:microsoft:windows

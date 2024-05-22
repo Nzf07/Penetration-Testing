@@ -1,0 +1,77 @@
+# Nmap 7.94SVN scan initiated Sun May 19 07:46:24 2024 as: nmap -sCV -T4 -oA scan.iniitial 172.16.5.13
+Nmap scan report for 172.16.5.13
+Host is up (0.0013s latency).
+Not shown: 980 filtered tcp ports (no-response)
+PORT      STATE SERVICE            VERSION
+53/tcp    open  domain             Simple DNS Plus
+80/tcp    open  http               Microsoft IIS httpd 8.5
+|_http-title: IIS Windows Server
+|_http-server-header: Microsoft-IIS/8.5
+| http-methods: 
+|_  Potentially risky methods: TRACE
+88/tcp    open  kerberos-sec       Microsoft Windows Kerberos (server time: 2024-05-19 11:46:35Z)
+135/tcp   open  msrpc              Microsoft Windows RPC
+139/tcp   open  netbios-ssn        Microsoft Windows netbios-ssn
+389/tcp   open  ldap               Microsoft Windows Active Directory LDAP (Domain: mycosendai.local, Site: Default-First-Site-Name)
+443/tcp   open  ssl/http           Microsoft IIS httpd 8.5
+|_http-title: IIS Windows Server
+|_ssl-date: 2024-05-19T11:48:14+00:00; +1s from scanner time.
+|_http-server-header: Microsoft-IIS/8.5
+| http-methods: 
+|_  Potentially risky methods: TRACE
+| ssl-cert: Subject: commonName=uacsrv1.mycosendai.local
+| Not valid before: 2019-07-08T07:23:34
+|_Not valid after:  2020-01-07T07:23:34
+445/tcp   open  microsoft-ds       Windows Server 2012 R2 Standard Evaluation 9600 microsoft-ds (workgroup: MYCOSENDAI)
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http         Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap               Microsoft Windows Active Directory LDAP (Domain: mycosendai.local, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+3389/tcp  open  ssl/ms-wbt-server?
+| ssl-cert: Subject: commonName=uacsrv1.mycosendai.local
+| Not valid before: 2024-05-07T08:29:05
+|_Not valid after:  2024-11-06T08:29:05
+| rdp-ntlm-info: 
+|   Target_Name: MYCOSENDAI
+|   NetBIOS_Domain_Name: MYCOSENDAI
+|   NetBIOS_Computer_Name: UACSRV1
+|   DNS_Domain_Name: mycosendai.local
+|   DNS_Computer_Name: uacsrv1.mycosendai.local
+|   Product_Version: 6.3.9600
+|_  System_Time: 2024-05-19T11:47:34+00:00
+|_ssl-date: 2024-05-19T11:48:14+00:00; +1s from scanner time.
+49154/tcp open  msrpc              Microsoft Windows RPC
+49155/tcp open  msrpc              Microsoft Windows RPC
+49157/tcp open  ncacn_http         Microsoft Windows RPC over HTTP 1.0
+49158/tcp open  msrpc              Microsoft Windows RPC
+49159/tcp open  msrpc              Microsoft Windows RPC
+49167/tcp open  msrpc              Microsoft Windows RPC
+Service Info: Host: UACSRV1; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb-os-discovery: 
+|   OS: Windows Server 2012 R2 Standard Evaluation 9600 (Windows Server 2012 R2 Standard Evaluation 6.3)
+|   OS CPE: cpe:/o:microsoft:windows_server_2012::-
+|   Computer name: uacsrv1
+|   NetBIOS computer name: UACSRV1\x00
+|   Domain name: mycosendai.local
+|   Forest name: mycosendai.local
+|   FQDN: uacsrv1.mycosendai.local
+|_  System time: 2024-05-19T13:47:34+02:00
+| smb2-security-mode: 
+|   3:0:2: 
+|_    Message signing enabled and required
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+|_clock-skew: mean: -19m59s, deviation: 48m59s, median: 0s
+|_nbstat: NetBIOS name: UACSRV1, NetBIOS user: <unknown>, NetBIOS MAC: 08:00:27:56:fb:4a (Oracle VirtualBox virtual NIC)
+| smb2-time: 
+|   date: 2024-05-19T11:47:34
+|_  start_date: 2024-05-19T11:44:24
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun May 19 07:48:13 2024 -- 1 IP address (1 host up) scanned in 109.23 seconds
