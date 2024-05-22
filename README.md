@@ -1,2 +1,2 @@
 # Penetration-Testing
-This repository contains PoCs for additional findings of Penetration Testing Coursework.
+This repository contains PoCs for additional findings for my Penetration Testing Coursework.
